@@ -15,7 +15,7 @@ xm1
 ```
 
 ```
-## [1] 10.44308
+## [1] 10.26382
 ```
 
 ```r
@@ -25,7 +25,7 @@ xsd1
 ```
 
 ```
-## [1] 3.156015
+## [1] 3.359482
 ```
 
 ```r
@@ -38,30 +38,21 @@ bootstrapsample1mean[i] <- mean(bootstrapsample1)
 bootstrapsample1sd[i] <- sd(bootstrapsample1)
 }
 ###Mean of Samples
-mean(bootstrapsample1)
+mean(bootstrapsample1mean)
 ```
 
 ```
-## [1] 9.675597
-```
-
-```r
-###Standard Deviation of Samples
-sd(bootstrapsample1)
-```
-
-```
-## [1] 3.483183
+## [1] 10.28866
 ```
 
 ```r
 #Summary of Samples
-summary(bootstrapsample1)
+summary(bootstrapsample1mean)
 ```
 
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   4.235   6.862   9.467   9.676  11.780  17.280
+##   8.497   9.970  10.300  10.290  10.630  11.600
 ```
 
 ```r
@@ -82,7 +73,7 @@ xm2
 ```
 
 ```
-## [1] 23.44201
+## [1] 23.49958
 ```
 
 ```r
@@ -91,7 +82,7 @@ xsd2
 ```
 
 ```
-## [1] 5.023059
+## [1] 5.839571
 ```
 
 ```r
@@ -104,30 +95,21 @@ bootstrapsample2mean[i] <- mean(bootstrapsample2)
 bootstrapsample2sd[i] <- sd(bootstrapsample2)
 }
 ###Mean of Sample 2
-mean(bootstrapsample2)
+mean(bootstrapsample2mean)
 ```
 
 ```
-## [1] 23.52811
-```
-
-```r
-###Std deviation of Sample2
-sd(bootstrapsample2)
-```
-
-```
-## [1] 5.122901
+## [1] 23.50002
 ```
 
 ```r
 ###Summary of sample 2
-summary(bootstrapsample1)
+summary(bootstrapsample2mean)
 ```
 
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   4.235   6.862   9.467   9.676  11.780  17.280
+##   21.63   23.10   23.49   23.50   23.88   25.81
 ```
 
 ```r
@@ -149,7 +131,7 @@ xexpm1
 ```
 
 ```
-## [1] 1.173227
+## [1] 1.122936
 ```
 
 ```r
@@ -159,7 +141,7 @@ xsd1
 ```
 
 ```
-## [1] 3.156015
+## [1] 3.359482
 ```
 
 ```r
@@ -172,30 +154,21 @@ bootstrapexp1mean[i] <- mean(bootstrapexp1)
 bootstrapexp1sd[i] <- sd(bootstrapexp1)
 }
 ###Mean of Samples
-mean(bootstrapexp1)
+mean(bootstrapexp1mean)
 ```
 
 ```
-## [1] 1.135062
-```
-
-```r
-###Standard Deviation of Samples
-sd(bootstrapexp1)
-```
-
-```
-## [1] 0.9261619
+## [1] 1.116781
 ```
 
 ```r
 #Summary of Samples
-summary(bootstrapexp1)
+summary(bootstrapexp1mean)
 ```
 
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## 0.02729 0.43970 0.77370 1.13500 1.87300 4.18200
+##  0.6612  1.0010  1.1030  1.1170  1.2250  1.7820
 ```
 
 ```r
@@ -210,22 +183,12 @@ hist(bootstrapexp1mean)
 ###Second exponential distribution 
 xexp2 <- rexp(100)
 xexpm2 <- mean(xexp2)
-xexpsd2 <- sd(xexp2)
 ###Mean of the normal distribution
 xexpm2
 ```
 
 ```
-## [1] 1.053438
-```
-
-```r
-###Std deviation of the normal distribution
-xexpsd2
-```
-
-```
-## [1] 1.000219
+## [1] 0.9331859
 ```
 
 ```r
@@ -235,33 +198,23 @@ bootstrapexp2sd <- numeric(nsamples2)
 for(i in 1:nsamples2){
 bootstrapexp2 <- sample (xexp2,100,replace=TRUE)
 bootstrapexp2mean[i] <- mean(bootstrapexp2) 
-bootstrapexp2sd[i] <- sd(bootstrapexp2)
 }
 ###Mean of Sample 2
-mean(bootstrapexp2)
+mean(bootstrapexp2mean)
 ```
 
 ```
-## [1] 1.305055
-```
-
-```r
-###Std deviation of Sample2
-sd(bootstrapexp2)
-```
-
-```
-## [1] 1.336068
+## [1] 0.932183
 ```
 
 ```r
 ###Summary of sample 2
-summary(bootstrapexp2)
+summary(bootstrapexp2mean)
 ```
 
 ```
-##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## 0.007073 0.462200 0.776800 1.305000 1.748000 5.162000
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.6374  0.8671  0.9304  0.9322  0.9921  1.2700
 ```
 
 ```r

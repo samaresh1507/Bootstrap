@@ -29,12 +29,9 @@ bootstrapsample1mean[i] <- mean(bootstrapsample1)
 bootstrapsample1sd[i] <- sd(bootstrapsample1)
 }
 ###Mean of Samples
-mean(bootstrapsample1)
-###Standard Deviation of Samples
-sd(bootstrapsample1)
+mean(bootstrapsample1mean)
 #Summary of Samples
-summary(bootstrapsample1)
-
+summary(bootstrapsample1mean)
 #to demonstrate central limit theorem with the histogram plot
 hist(bootstrapsample1mean)
 ```
@@ -58,11 +55,9 @@ bootstrapsample2mean[i] <- mean(bootstrapsample2)
 bootstrapsample2sd[i] <- sd(bootstrapsample2)
 }
 ###Mean of Sample 2
-mean(bootstrapsample2)
-###Std deviation of Sample2
-sd(bootstrapsample2)
+mean(bootstrapsample2mean)
 ###Summary of sample 2
-summary(bootstrapsample1)
+summary(bootstrapsample2mean)
 
 #to demonstrate central limit theorem with the histogram plot
 hist(bootstrapsample2mean)
@@ -89,11 +84,9 @@ bootstrapexp1mean[i] <- mean(bootstrapexp1)
 bootstrapexp1sd[i] <- sd(bootstrapexp1)
 }
 ###Mean of Samples
-mean(bootstrapexp1)
-###Standard Deviation of Samples
-sd(bootstrapexp1)
+mean(bootstrapexp1mean)
 #Summary of Samples
-summary(bootstrapexp1)
+summary(bootstrapexp1mean)
 
 #to demonstrate central limit theorem with the histogram plot
 hist(bootstrapexp1mean)
@@ -103,11 +96,8 @@ hist(bootstrapexp1mean)
 ###Second exponential distribution 
 xexp2 <- rexp(100)
 xexpm2 <- mean(xexp2)
-xexpsd2 <- sd(xexp2)
 ###Mean of the normal distribution
 xexpm2
-###Std deviation of the normal distribution
-xexpsd2
 
 nsamples2 <- 5000
 bootstrapexp2mean <- numeric(nsamples2)
@@ -115,14 +105,11 @@ bootstrapexp2sd <- numeric(nsamples2)
 for(i in 1:nsamples2){
 bootstrapexp2 <- sample (xexp2,100,replace=TRUE)
 bootstrapexp2mean[i] <- mean(bootstrapexp2) 
-bootstrapexp2sd[i] <- sd(bootstrapexp2)
 }
 ###Mean of Sample 2
-mean(bootstrapexp2)
-###Std deviation of Sample2
-sd(bootstrapexp2)
+mean(bootstrapexp2mean)
 ###Summary of sample 2
-summary(bootstrapexp2)
+summary(bootstrapexp2mean)
 
 #to demonstrate central limit theorem with the histogram plot
 hist(bootstrapexp2mean)
