@@ -1,0 +1,6 @@
+Results File
+------------
+
+The central limit theorem states that arithmetic mean of large number of independent random samples will be normally distributed.
+
+To illustrate this using bootstrap, we have taken 4 examples. The 1st 2 examples are for 2 random normal distribution. The 1st is of sample size 50. We can see that the mean of this distribution is . We then perform an iteration of 1000 to get 1000 random samples 

@@ -1,0 +1,127 @@
+---
+title: "Unit 4 HW - Bootstrap"
+author: "Sandhya"
+date: "June 8, 2016"
+output: html_document
+---
+
+Bootstrap code to illustrate central limit theorem.
+1st Using Normal distribution
+
+```{r}
+###First random normal distribution with mean 10, and sd = 4
+x1 <- rnorm(50,mean=10,sd=3)
+xm1 <- mean(x1)
+###Mean of the normal distribution
+xm1
+xsd1 <- sd(x1)
+###Std deviation of the normal distribution
+xsd1
+
+nsamples1 <- 1000
+bootstrapsample1mean <- numeric(nsamples1)
+bootstrapsample1sd <- numeric(nsamples1)
+for(i in 1:nsamples1){
+bootstrapsample1 <- sample (x1,50,replace=TRUE)
+bootstrapsample1mean[i] <- mean(bootstrapsample1) 
+bootstrapsample1sd[i] <- sd(bootstrapsample1)
+}
+###Mean of Samples
+mean(bootstrapsample1)
+###Standard Deviation of Samples
+sd(bootstrapsample1)
+#Summary of Samples
+summary(bootstrapsample1)
+
+#to demonstrate central limit theorem with the histogram plot
+hist(bootstrapsample1mean)
+```
+
+```{r}
+###Second random normal distribution with mean 23, and sd = 5
+x2 <- rnorm(100,mean=23,sd=5)
+xm2 <- mean(x2)
+xsd2 <- sd(x2)
+###Mean of the normal distribution
+xm2
+###Std deviation of the normal distribution
+xsd2
+
+nsamples2 <- 5000
+bootstrapsample2mean <- numeric(nsamples2)
+bootstrapsample2sd <- numeric(nsamples2)
+for(i in 1:nsamples2){
+bootstrapsample2 <- sample (x2,100,replace=TRUE)
+bootstrapsample2mean[i] <- mean(bootstrapsample2) 
+bootstrapsample2sd[i] <- sd(bootstrapsample2)
+}
+###Mean of Sample 2
+mean(bootstrapsample2)
+###Std deviation of Sample2
+sd(bootstrapsample2)
+###Summary of sample 2
+summary(bootstrapsample1)
+
+#to demonstrate central limit theorem with the histogram plot
+hist(bootstrapsample2mean)
+```
+Bootstrap code to illustrate central limit theorem.
+2nd Using Exponetial distribution
+
+```{r}
+###First exponential distribution with rate = 2
+xexp1 <- rexp(50)
+xexpm1 <- mean(xexp1)
+###Mean of the normal distribution
+xexpm1
+xexpsd1 <- sd(xexp1)
+###Std deviation of the normal distribution
+xsd1
+
+nsamples1 <- 1000
+bootstrapexp1mean <- numeric(nsamples1)
+bootstrapexp1sd <- numeric(nsamples1)
+for(i in 1:nsamples1){
+bootstrapexp1 <- sample (xexp1,50,replace=TRUE)
+bootstrapexp1mean[i] <- mean(bootstrapexp1) 
+bootstrapexp1sd[i] <- sd(bootstrapexp1)
+}
+###Mean of Samples
+mean(bootstrapexp1)
+###Standard Deviation of Samples
+sd(bootstrapexp1)
+#Summary of Samples
+summary(bootstrapexp1)
+
+#to demonstrate central limit theorem with the histogram plot
+hist(bootstrapexp1mean)
+```
+
+```{r}
+###Second exponential distribution 
+xexp2 <- rexp(100)
+xexpm2 <- mean(xexp2)
+xexpsd2 <- sd(xexp2)
+###Mean of the normal distribution
+xexpm2
+###Std deviation of the normal distribution
+xexpsd2
+
+nsamples2 <- 5000
+bootstrapexp2mean <- numeric(nsamples2)
+bootstrapexp2sd <- numeric(nsamples2)
+for(i in 1:nsamples2){
+bootstrapexp2 <- sample (xexp2,100,replace=TRUE)
+bootstrapexp2mean[i] <- mean(bootstrapexp2) 
+bootstrapexp2sd[i] <- sd(bootstrapexp2)
+}
+###Mean of Sample 2
+mean(bootstrapexp2)
+###Std deviation of Sample2
+sd(bootstrapexp2)
+###Summary of sample 2
+summary(bootstrapexp2)
+
+#to demonstrate central limit theorem with the histogram plot
+hist(bootstrapexp2mean)
+```
